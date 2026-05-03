@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:15.3
+    container_name: ms-user-db
+    environment:
+      POSTGRES_DB: ms-user-ms
+      POSTGRES_USER: postgres-user
+      POSTGRES_PASSWORD: postgres-password
+    ports:
+      - "5435:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
