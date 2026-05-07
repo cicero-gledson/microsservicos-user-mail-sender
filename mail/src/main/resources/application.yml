@@ -17,5 +17,12 @@ spring:
         format_sql: true
         dialect: org.hibernate.dialect.PostgreSQLDialect
 
+  rabbitmq:
+    # https://www.cloudamqp.com/ - free RabbitMQ hosting service para testes
+    addresses: amqps://chameleon.lmq.cloudamqp.com
+    username: xcwuwyhw
+    password: 1hYt_eCGTVjNxS7kdKZJDs9LOrf4qU6c
+    virtual-host: xcwuwyhw
+
 server:
   port: 8080
