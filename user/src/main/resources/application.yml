@@ -1,3 +1,4 @@
+debug: false
 spring:
   application:
     name: user
@@ -10,12 +11,17 @@ spring:
 
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: validate
     show-sql: true
     properties:
       hibernate:
         format_sql: true
         dialect: org.hibernate.dialect.PostgreSQLDialect
+
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+    validate-on-migrate: true
 
   rabbitmq:
     # https://www.cloudamqp.com/ - free RabbitMQ hosting service para testes

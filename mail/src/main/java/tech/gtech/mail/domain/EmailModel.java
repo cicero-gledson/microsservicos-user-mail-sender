@@ -16,7 +16,7 @@ import java.util.UUID;
 @Data
 public class EmailModel {
 
-    private final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -27,6 +27,7 @@ public class EmailModel {
     private String emailSubject;
     @Column(columnDefinition = "TEXT")
     private String emailBody;
+    @Enumerated(EnumType.STRING)
     private EmailStatus emailStatus;
     private LocalDateTime sendDateTimeEmail;
 
